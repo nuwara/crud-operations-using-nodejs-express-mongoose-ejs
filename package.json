@@ -1,0 +1,24 @@
+{
+  "name": "crud-operations-using-nodejs-express-mongoose-ejs",
+  "version": "1.0.0",
+  "description": "NodeJS CRUD Operations using Express, Mongoose and EJS",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "devStart": "nodemon app.js"
+  },
+  "author": "Muhammad Idris",
+  "license": "ISC",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^7.4.2",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
