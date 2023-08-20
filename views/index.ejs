@@ -1,0 +1,59 @@
+<%- include("./partials/header") %>
+<div class="container">
+  <div class="row mt-5 w-75">
+    <% if(successMsg.length > 0){%>
+    <div class="alert alert-success" role="alert"><%= successMsg %></div>
+    <% }%>
+
+    <div class="col-8 mx-auto">
+      <a href="/products/add" class="btn btn-primary btn-lg"
+        ><i class="bi bi-plus-lg fw-bolder"></i
+      ></a>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th colspan="2">Operations</th>
+          </tr>
+        </thead>
+		<%if(results.length > 0){%>
+        <tbody>
+          <% results.forEach(result=>{ %>
+          <tr>
+            <td><img src="<%=result.image%>" width="50" /></td>
+            <td><%= result.name %></td>
+            <td><%= result.description %></td>
+            <td><%= result.price %></td>
+            <td><%= result.qty %></td>
+            <td>
+              <a href="/products/<%=result.id%>" class="btn btn-success"
+                ><i class="bi bi-pencil-square"></i
+              ></a>
+            </td>
+            <td>
+              <form
+                action="/products/<%=result.id%>?_method=delete"
+                method="post"
+              >
+                <button type="submit" class="btn btn-danger">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+		
+		<%}else{%>
+		<p class="text-center text-info fw-bolder">No Data to Display</p>
+		<%}%>
+		
+      </table>
+    </div>
+  </div>
+</div>
+<%- include("./partials/footer") %>

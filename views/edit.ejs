@@ -1,0 +1,61 @@
+<%- include("./partials/header") %>
+<div class="container">
+  <h1 class="text-center mt-5">Updating Record</h1>
+  <form
+    action="/products/<%= result.id %>?_method=put"
+    method="post"
+    enctype="multipart/form-data"
+    class="w-75 mx-auto mt-5"
+  >
+    <div class="mb-3">
+      <label for="fullname" class="form-label">Product Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        value="<%= result.name %>"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        name="description"
+        value="<%= result.description %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input
+        type="text"
+        class="form-control"
+        name="price"
+        value="<%= result.price %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="qty" class="form-label">Quantity</label>
+      <input
+        type="text"
+        class="form-control"
+        name="qty"
+        value="<%= result.qty %>"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">Image</label>
+      <input
+        type="file"
+        class="form-control"
+        name="image"
+        value="<%= result.image %>"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="/products" class="btn btn-secondary">Back</a>
+  </form>
+</div>
+<%- include("./partials/footer") %>
